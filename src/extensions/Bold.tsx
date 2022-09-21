@@ -15,12 +15,7 @@ export function Bold(props: BoldProps) {
 
     return (
         <Tooltip title='加粗'>
-            <div
-                className={classnames({
-                    'is-active': editor.isActive('bold'),
-                })}
-                onClick={onClick}
-            >
+            <div className={classnames({ 'is-active': editor.isActive('bold') })} onClick={onClick}>
                 <IconFont name='IconFont__jiacu' />
             </div>
         </Tooltip>

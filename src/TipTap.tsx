@@ -13,7 +13,6 @@ import TableExtension from '@tiptap/extension-table';
 import TableRow from '@tiptap/extension-table-row';
 import TableCell from '@tiptap/extension-table-cell';
 import classnames from 'classnames';
-
 import {
     Bold,
     BulletList,
@@ -41,21 +40,13 @@ type ToolbarItem = (props: ExtensionProps) => JSX.Element;
 
 export interface TiptapProps {
     className?: string;
-
     toolbar?: ToolbarItem[][];
-
     content?: string;
-
     placeholder?: string;
-
     height?: number;
-
     onCreate?: (editor: Editor) => void;
-
     onUpdate?: (html: string, editor: Editor, transaction: any) => void;
-
     onPastedHTML?: (text: string) => string;
-
     onUploadImage?: (file: File, insertSrc: (src: string) => void) => void;
 }
 
@@ -71,7 +62,7 @@ function getDefaultToolbar(): ToolbarItem[][] {
     ];
 }
 
-export function Tiptap(props: TiptapProps) {
+export function TipTap(props: TiptapProps) {
     const {
         onCreate,
         onUpdate,
@@ -113,7 +104,6 @@ export function Tiptap(props: TiptapProps) {
                 if (onPastedHTML) {
                     return onPastedHTML(text);
                 }
-
                 return text;
             },
         },
