@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { ExtensionProps } from '../interfaces';
-import { Tooltip } from 'antd';
 import { IconFont } from '../components';
 
 export type RetractProps = ExtensionProps;
@@ -13,10 +12,8 @@ export function Retract(props: RetractProps) {
     }, [editor]);
 
     return (
-        <Tooltip title='缩进'>
-            <div onClick={onClick}>
-                <IconFont name='IconFont__suojin' />
-            </div>
-        </Tooltip>
+        <div onClick={onClick} id='Retract'>
+            <IconFont name='indent' />
+        </div>
     );
 }

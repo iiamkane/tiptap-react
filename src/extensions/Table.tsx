@@ -82,7 +82,7 @@ export function Table(props: TableProps) {
                 <IconFont name='IconFont__biaoge' />
             </Tooltip>
             {visible && (
-                <div className='Tiptap-pane'>
+                <div className='KTR-Editor-pane'>
                     {commandList.map(command => {
                         return (
                             <div onClick={() => onClick(command)} key={command.command}>

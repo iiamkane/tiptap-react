@@ -24,7 +24,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
     devServer: {
-        port: 3001
+        port: 3333
     },
     devtool: "inline-source-map"
 };

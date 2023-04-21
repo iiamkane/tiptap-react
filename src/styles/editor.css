@@ -1,110 +1,4 @@
-/* prefix: RTE(Tiptap) */
-
-/* 剔除TipTap默认聚焦样式 */
-.Tiptap-content div:focus-visible {
-    outline: none;
-}
-
-/* p/li/ol */
-.ProseMirror {
-    margin: 16px;
-    padding: 0;
-    line-height: 24px;
-    overflow-x: hidden;
-}
-
-.ProseMirror p,
-.ProseMirror ol,
-.ProseMirror ul {
-    margin: 0;
-}
-
-.ProseMirror ol,
-.ProseMirror ul {
-    padding-left: 16px;
-}
-
-.ProseMirror li::marker {
-    content: unset;
-}
-
-/* 占位符样式 */
-.ProseMirror p.is-editor-empty:first-child::before {
-    content: attr(data-placeholder);
-    float: left;
-    color: #adb5bd;
-    pointer-events: none;
-    height: 0;
-}
-
-/* Table默认样式 */
-.ProseMirror table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-}
-
-.ProseMirror table td,
-.ProseMirror table th {
-    min-width: 1em;
-    border: 2px solid #ced4da;
-    padding: 3px 5px;
-    vertical-align: top;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.ProseMirror table td > *,
-.ProseMirror table th > * {
-    margin-bottom: 0;
-}
-
-/*  .ProseMirror table th {
-    font-weight: bold;  
-    text-align: left;
-    background-color: #f1f3f5;
-} */
-
-.ProseMirror table .selectedCell:after {
-    z-index: 2;
-    position: absolute;
-    content: '';
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: rgba(200, 200, 255, 0.4);
-    pointer-events: none;
-}
-
-.ProseMirror table .column-resize-handle {
-    position: absolute;
-    right: -2px;
-    top: 0;
-    bottom: -2px;
-    width: 4px;
-    background-color: #adf;
-    pointer-events: none;
-}
-
-.ProseMirror table p {
-    margin: 0;
-}
-
-.tableWrapper {
-    padding: 1rem 0;
-    overflow-x: auto;
-}
-
-.resize-cursor {
-    cursor: ew-resize;
-    cursor: col-resize;
-}
-
-/* editor main */
-.Tiptap-editor {
+.KTREditor {
     width: 100%;
     margin: 0 auto;
     background: #f4f4f4;
@@ -114,8 +8,10 @@
     border: 1px solid #feefd0;
 }
 
-/******************header*******************/
-.Tiptap-editor .Tiptap-header {
+/* 
+    header
+*/
+.KTREditor .KTREditor_header {
     background: #ffffff;
     min-height: 40px;
     border-radius: 6px 6px 0px 0px;
@@ -127,17 +23,17 @@
     user-select: none;
 }
 
-.Tiptap-editor .Tiptap-header .is-active {
+.KTREditor .KTREditor_header .is-active {
     background: #f4f4f4;
     color: #faad14;
 }
 
-.Tiptap-editor .Tiptap-header .Tiptap-group {
+/* .KTREditor .KTREditor_header > div {
     padding: 4px 0;
     height: 40px;
-}
-
-.Tiptap-editor .Tiptap-header .Tiptap-group:not(:last-child)::after {
+} */
+/* 
+.KTREditor .KTREditor_header .KTREditor_group:not(:last-child)::after {
     content: '';
     width: 1px;
     height: 24px;
@@ -147,34 +43,29 @@
     margin: 0 22px;
     position: relative;
     top: 4px;
-}
+} */
 
-.Tiptap-editor .Tiptap-header .Tiptap-group > div {
-    vertical-align: top;
-    display: inline-block;
+.KTREditor .KTREditor_header > div {
     width: 32px;
     height: 32px;
-    line-height: 32px;
-    text-align: center;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Tiptap-editor .Tiptap-header .Tiptap-group > div:hover {
+.KTREditor .KTREditor_header > div:hover {
     background: #f4f4f4;
-    color: #faad14;
+}
+.KTREditor .KTREditor_header > div:hover svg {
+    fill: #faad14;
 }
 
-.Tiptap-editor .Tiptap-header .Tiptap-group > div:not(:first-child) {
-    margin-left: 16px;
-}
-
-.Tiptap-editor .Tiptap-header .Tiptap-group > div i {
-    font-size: 20px !important;
-}
-
-/* content */
-.Tiptap-editor .Tiptap-content {
+/* 
+    content
+*/
+.KTREditor .KTREditor_content {
     border-radius: 6px;
 }

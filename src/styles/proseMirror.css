@@ -1,0 +1,102 @@
+/* 删除 tiptap 默认聚焦样式 */
+.KTREditor_content div:focus-visible {
+    outline: none;
+}
+
+/* p/li/ol */
+.ProseMirror {
+    margin: 16px;
+    padding: 0;
+    line-height: 24px;
+    overflow-x: hidden;
+}
+
+.ProseMirror p,
+.ProseMirror ol,
+.ProseMirror ul {
+    margin: 0;
+}
+
+.ProseMirror ol,
+.ProseMirror ul {
+    padding-left: 16px;
+}
+
+.ProseMirror li::marker {
+    content: unset;
+}
+
+/* 占位符样式 */
+.ProseMirror p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: #adb5bd;
+    pointer-events: none;
+    height: 0;
+}
+
+/* Table默认样式 */
+.ProseMirror table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+    min-width: 1em;
+    border: 2px solid #ced4da;
+    padding: 3px 5px;
+    vertical-align: top;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.ProseMirror table td > *,
+.ProseMirror table th > * {
+    margin-bottom: 0;
+}
+
+/*  .ProseMirror table th {
+    font-weight: bold;  
+    text-align: left;
+    background-color: #f1f3f5;
+} */
+
+.ProseMirror table .selectedCell:after {
+    z-index: 2;
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(200, 200, 255, 0.4);
+    pointer-events: none;
+}
+
+.ProseMirror table .column-resize-handle {
+    position: absolute;
+    right: -2px;
+    top: 0;
+    bottom: -2px;
+    width: 4px;
+    background-color: #adf;
+    pointer-events: none;
+}
+
+.ProseMirror table p {
+    margin: 0;
+}
+
+.tableWrapper {
+    padding: 1rem 0;
+    overflow-x: auto;
+}
+
+.resize-cursor {
+    cursor: ew-resize;
+    cursor: col-resize;
+}

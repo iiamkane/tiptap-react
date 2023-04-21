@@ -1,4 +1,6 @@
-import "./styles";
-export * from "./TipTap";
-export * from "./extensions";
-import "antd/dist/antd.css";
+import './styles';
+import 'antd/dist/antd.css';
+export * from './extensions';
+
+import KTREditor from './ktr-editor';
+export default KTREditor;

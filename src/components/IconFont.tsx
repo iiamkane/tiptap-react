@@ -1,29 +1,15 @@
 import * as React from 'react';
-import classnames from 'classnames';
 
-export interface IconFontProps {
-    onClick?: (...args: any[]) => void;
+interface IconFontProps {
     name: string;
-    className?: string;
-    style?: React.CSSProperties;
 }
 
-export function IconFont(props: IconFontProps) {
-    const { onClick, name, className, style } = props;
+export const IconFont = (props: IconFontProps) => {
+    const { name } = props;
 
     return (
-        <i
-            className={classnames(
-                'inline-block font-normal leading-none normal-case text-center align-[-0.125em]',
-                {
-                    'cursor-pointer': onClick,
-                },
-                name,
-                name.split('__')[0],
-                className
-            )}
-            onClick={onClick}
-            style={style}
-        />
+        <svg className='icon' aria-hidden='true' width='24' height='24'>
+            <use xlinkHref={`#icon-${name}`}></use>
+        </svg>
     );
-}
+};

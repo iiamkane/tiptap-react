@@ -23,12 +23,10 @@ export function Image(props: ImageProps) {
     }, []);
 
     return (
-        <Tooltip title='插入图片'>
-            <div className='Taptip-ImageUpload'>
-                <Upload showUploadList={false} accept={accept} beforeUpload={beforeUpload}>
-                    <IconFont name='IconFont__charutupian' />
-                </Upload>
-            </div>
-        </Tooltip>
+        <div className='Taptip-ImageUpload'>
+            {/* <Upload showUploadList={false} accept={accept} beforeUpload={beforeUpload}> */}
+                <IconFont name='picture' />
+            {/* </Upload> */}
+        </div>
     );
 }

@@ -9,17 +9,13 @@ export type OrderedListProps = ExtensionProps;
 export function OrderedList(props: OrderedListProps) {
     const { editor } = props;
 
-    const onClick = React.useCallback(() => {
+    const onClick = () => {
         editor.chain().focus().toggleOrderedList().run();
-    }, [editor]);
+    };
+
     return (
-        <Tooltip title='有序列表'>
-            <div
-                className={classnames({ 'is-active': editor.isActive('orderedList') })}
-                onClick={onClick}
-            >
-                <IconFont name='IconFont__youxupaixu' />
-            </div>
-        </Tooltip>
+        <div className={`${editor.isActive('orderedList') && 'is-active'}`} onClick={onClick}>
+            <IconFont name='ol' />
+        </div>
     );
 }

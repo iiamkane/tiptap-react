@@ -1,4 +1,4 @@
-.Tiptap-ImageUpload > span > div .ant-upload {
+.KTREditor_ImageUpload > span > div .ant-upload {
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -7,12 +7,12 @@
     border-radius: 6px;
 }
 
-.Tiptap-ImageUpload > span > div .ant-upload:hover {
+.KTREditor_ImageUpload > span > div .ant-upload:hover {
     background: #f4f4f4;
     color: #faad14;
 }
 
-.Tiptap-pane {
+.KTREditor_pane {
     min-width: 88px;
     padding: 4px 0;
     position: absolute;
@@ -25,11 +25,11 @@
     z-index: 1;
 }
 
-.Tiptap-pane > div {
+.KTREditor_pane > div {
     padding: 0 16px;
     white-space: nowrap;
 }
 
-.Tiptap-pane > div:hover {
+.KTREditor_pane > div:hover {
     background: rgba(250, 173, 20, 0.39);
 }

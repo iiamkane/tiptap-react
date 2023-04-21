@@ -17,20 +17,15 @@ export function SizePane(props: SizePaneProps) {
 
     useClickAway(setFalse, ref);
 
-    const onClick = React.useCallback(
-        px => {
-            editor.chain().focus().setFontSize(px).run();
-        },
-        [editor]
-    );
+    const onClick = (px: string) => {
+        editor.chain().focus().setFontSize(px).run();
+    };
 
     return (
         <div ref={ref} onClick={setTrue}>
-            <Tooltip title='字号'>
-                <IconFont name='IconFont__zihao' />
-            </Tooltip>
+            <IconFont name='fontSize' />
 
-            {visible && (
+            {/* {visible && (
                 <div className='Tiptap-pane'>
                     {size.map(px => {
                         return (
@@ -40,7 +35,7 @@ export function SizePane(props: SizePaneProps) {
                         );
                     })}
                 </div>
-            )}
+            )} */}
         </div>
     );
 }
