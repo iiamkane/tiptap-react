@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { ExtensionProps } from '../interfaces';
-import { useBoolean, useClickAway } from 'ahooks';
+import { useBoolean, useClickAway, useEventListener } from 'ahooks';
 import { IconFont } from '../components';
+import { createBEM } from '../hooks';
 
 export type ColorPaneProps = ExtensionProps;
 
@@ -12,30 +13,28 @@ export function ColorPane(props: ColorPaneProps) {
     const [visible, { setTrue, setFalse }] = useBoolean(false);
     const ref = React.useRef<HTMLDivElement | null>(null);
 
-    useClickAway(setFalse, ref);
+    const onClick = (rgb: string) => {
+        editor.chain().focus().setColor(rgb).run();
+    };
 
-    const onClick = React.useCallback(
-        (rgb: string) => {
-            editor.chain().focus().setColor(rgb).run();
-        },
-        [editor]
-    );
+    const Pane = () => {
+        return (
+            <div className={createBEM('pane')} id='pane'>
+                {color.map(rgb => {
+                    return (
+                        <div id='color' style={{ color: rgb }} key={rgb} onClick={() => onClick(rgb)}>
+                            ABCDEFG
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
 
     return (
-        <div onClick={setTrue} ref={ref}>
+        <div onClick={setTrue} className={visible ? 'is-active' : undefined} ref={ref}>
             <IconFont name='fontColor' />
-
-            {/* {visible && (
-                <div className='Tiptap-pane'>
-                    {color.map(rgb => {
-                        return (
-                            <div style={{ color: rgb }} key={rgb} onClick={() => onClick(rgb)}>
-                                ABCDEFG
-                            </div>
-                        );
-                    })}
-                </div>
-            )} */}
+            {visible && <Pane />}
         </div>
     );
 }

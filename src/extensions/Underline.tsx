@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { ExtensionProps } from '../interfaces';
-import classnames from 'classnames';
 import { IconFont } from '../components';
 
 export type UnderlineProps = ExtensionProps;

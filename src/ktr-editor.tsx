@@ -113,11 +113,16 @@ const KTREditor = (props: Partial<KTREditorProps>) => {
     return (
         <div className={`${createBEM()} ${className ?? ''}`}>
             <header className={createBEM('header')}>
-                {toolbar.map((group, index) => {
+                {toolbar.map((group, i) => {
                     return (
-                        <React.Fragment key={index}>
-                            {group.map(Component => {
-                                return <React.Fragment key={Component.name}>{editor && <Component editor={editor} {...rest} />}</React.Fragment>;
+                        <React.Fragment key={i}>
+                            {group.map((Component, _i) => {
+                                return (
+                                    <React.Fragment key={Component.name}>
+                                        {i !== 0 && _i === 0 && <span>|</span>}
+                                        {editor && <Component editor={editor} {...rest} />}
+                                    </React.Fragment>
+                                );
                             })}
                         </React.Fragment>
                     );

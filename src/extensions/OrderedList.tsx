@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { ExtensionProps } from '../interfaces';
-import { Tooltip } from 'antd';
-import classnames from 'classnames';
 import { IconFont } from '../components';
 
 export type OrderedListProps = ExtensionProps;

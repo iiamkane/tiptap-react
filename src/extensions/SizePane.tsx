@@ -2,7 +2,6 @@ import * as React from 'react';
 import { ExtensionProps } from '../interfaces';
 import { useClickAway, useBoolean } from 'ahooks';
 import { IconFont } from '../components';
-import { Tooltip } from 'antd';
 
 export type SizePaneProps = ExtensionProps;
 

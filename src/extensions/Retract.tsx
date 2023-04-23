@@ -7,9 +7,9 @@ export type RetractProps = ExtensionProps;
 export function Retract(props: RetractProps) {
     const { editor } = props;
 
-    const onClick = React.useCallback(() => {
+    const onClick = () => {
         editor.chain().focus().setTextIndent().run();
-    }, [editor]);
+    };
 
     return (
         <div onClick={onClick} id='Retract'>

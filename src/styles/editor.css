@@ -25,25 +25,10 @@
 
 .KTREditor .KTREditor_header .is-active {
     background: #f4f4f4;
-    color: #faad14;
 }
-
-/* .KTREditor .KTREditor_header > div {
-    padding: 4px 0;
-    height: 40px;
-} */
-/* 
-.KTREditor .KTREditor_header .KTREditor_group:not(:last-child)::after {
-    content: '';
-    width: 1px;
-    height: 24px;
-    display: inline-block;
-    border-left: 1px solid #707070;
-    opacity: 0.16;
-    margin: 0 22px;
-    position: relative;
-    top: 4px;
-} */
+.KTREditor .KTREditor_header .is-active > svg {
+    fill: #faad14;
+}
 
 .KTREditor .KTREditor_header > div {
     width: 32px;
@@ -54,8 +39,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 8px;
 }
-
+.KTREditor .KTREditor_header > span {
+    padding: 0 22px 0 14px;
+    font-size: 16px;
+    color: #747474;
+}
 .KTREditor .KTREditor_header > div:hover {
     background: #f4f4f4;
 }
